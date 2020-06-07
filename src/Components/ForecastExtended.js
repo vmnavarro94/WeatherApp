@@ -49,11 +49,16 @@ class ForecastExtended extends Component {
         return <h3>Loaging forecaster...</h3>;
     }
 
-    componentWillReceiveProps(nextProps){
-        if(nextProps.city !== this.props.city)
-        {
-            this.setState({forecastData: null});
-            this.updateCity(nextProps.city);
+    static getDerivedStateFromProps(nextProps, prevState){
+        const {city} = nextProps;
+        return city === prevState.city
+            ? {forecastData: prevState.forecastData, city}
+            : {forecastData: null, city};
+    }
+
+    componentDidUpdate(prevProps){
+        if(this.state.forecastData === null){
+            this.updateCity(this.state.city);
         }
     }
 
