@@ -10,7 +10,7 @@ import { setCity } from '../Actions';
 class LocationListContainer extends Component {
 
     handleSelectionLocation = city => {
-        this.props.setCity(setCity);
+        this.props.setCity(city);
     }
 
     render() {
