@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import WeatherLocation from './WeatherLocation';
 import './styles.css';
 const LocationList = ({cities, onSelectedLocation}) => {
-    const handleWeatherLocactionClick = city =>
-    {
-        console.log("handleWeatherLocactionClick");
+    const handleWeatherLocactionClick = city => {
         onSelectedLocation(city);
     }
     const getCitiesComponents = cities => (
