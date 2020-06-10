@@ -17,16 +17,10 @@ class WeatherLocation extends Component{
             city,
             data: null,
         };
-        //console.log("constructor");
     }
 
     componentDidMount() {
-        //console.log("componentDidMount");
         this.handleUpdate();
-    }
-    
-    componentDidUpdate(prevProps, prevState) {
-        //console.log("componentDidUpdate");
     }
 
     handleUpdate = () => {
