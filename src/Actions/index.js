@@ -44,9 +44,9 @@ export const setWeather = payload => {
             fetch(getUrlWeatherByCity(city)).then(resolve => {
                 return resolve.json();
             }).then(data => {
-                const newWeatherData = transformWeather(data);
+                const weather = transformWeather(data);
                 
-                dispatch(setWeatherCity({city, newWeatherData}));    
+                dispatch(setWeatherCity({city, weather}));    
             });
         });
     };
